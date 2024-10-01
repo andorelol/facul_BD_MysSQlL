@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculdade Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Main Menu -->
+    <div class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+        <h1 class="text-2xl font-bold mb-4">Menu da Faculdade</h1>
+        <nav class="space-y-4">
+            <button id="menuAlunosBtn" class="block w-full text-left p-3 bg-blue-500 text-white rounded">Alunos</button>
+            <button id="menuProfessoresBtn" class="block w-full text-left p-3 bg-green-500 text-white rounded">Professores</button>
+            <button id="menuCursosBtn" class="block w-full text-left p-3 bg-red-500 text-white rounded">Cursos</button>
+        </nav>
+    </div>
+
+    <!-- Alunos Section -->
+    <div id="menuAlunos" class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg hidden">
+        <h2 class="text-xl font-semibold mb-4">Menu Alunos</h2>
+        <ul class="space-y-2">
+            <li><button id="listarAlunosBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Listar Alunos</button></li>
+            <li><button id="cadastrarAlunoBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Cadastrar Aluno</button></li>
+            <li><button id="disciplinasAlunoBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Listar Disciplinas do Aluno</button></li>
+        </ul>
+
+        <!-- Alunos Form Section -->
+        <div id="formCadastrarAluno" class="hidden mt-4">
+            <h3 class="text-lg font-semibold">Cadastrar Aluno</h3>
+            <form id="cadastrarAlunoForm">
+                <label class="block mt-2">RA do Aluno:
+                    <input type="number" name="ra" class="w-full p-2 border rounded mt-1" required>
+                </label>
+                <label class="block mt-2">Nome do Aluno:
+                    <input type="text" name="nome" class="w-full p-2 border rounded mt-1" required>
+                </label>
+                <label class="block mt-2">Data de Nascimento (dd-mm-yyyy):
+                    <input type="date" name="dataNascimento" class="w-full p-2 border rounded mt-1" required>
+                </label>
+                <button type="submit" class="mt-4 p-3 bg-blue-500 text-white rounded">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Professores Section -->
+    <div id="menuProfessores" class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg hidden">
+        <h2 class="text-xl font-semibold mb-4">Menu Professores</h2>
+        <ul class="space-y-2">
+            <li><button id="listarProfessoresBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Listar Professores</button></li>
+            <li><button id="cadastrarProfessorBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Cadastrar Professor</button></li>
+        </ul>
+        <!-- Similar form for "Cadastrar Professor" can be added here -->
+    </div>
+
+    <!-- Cursos Section -->
+    <div id="menuCursos" class="max-w-2xl mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg hidden">
+        <h2 class="text-xl font-semibold mb-4">Menu Cursos</h2>
+        <ul class="space-y-2">
+            <li><button id="listarCursosBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Listar Cursos</button></li>
+            <li><button id="cadastrarCursoBtn" class="block w-full text-left p-3 bg-gray-200 rounded">Cadastrar Curso</button></li>
+        </ul>
+    </div>
+
+    <script>
+        // Show/hide menu sections
+        document.getElementById('menuAlunosBtn').onclick = () => toggleMenu('menuAlunos');
+        document.getElementById('menuProfessoresBtn').onclick = () => toggleMenu('menuProfessores');
+        document.getElementById('menuCursosBtn').onclick = () => toggleMenu('menuCursos');
+
+        function toggleMenu(menuId) {
+            document.querySelectorAll('div[id^="menu"]').forEach(menu => menu.classList.add('hidden'));
+            document.getElementById(menuId).classList.remove('hidden');
+        }
+
+        // Show Aluno form
+        document.getElementById('cadastrarAlunoBtn').onclick = () => {
+            document.getElementById('formCadastrarAluno').classList.remove('hidden');
+        };
+
+        // Form submission logic (simulating)
+        document.getElementById('cadastrarAlunoForm').onsubmit = (e) => {
+            e.preventDefault();
+            alert("Aluno cadastrado com sucesso!");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_21" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<levels>
+		<level name="Maven: ch.qos.logback:logback-classic:1.2.11" value="project"/>
+		<level name="Maven: ch.qos.logback:logback-core:1.2.11" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.32" value="project"/>
+		<level name="Maven: org.mariadb.jdbc:mariadb-java-client:3.1.2" value="project"/>
+		<level name="Maven: com.github.waffle:waffle-jna:3.2.0" value="project"/>
+		<level name="Maven: net.java.dev.jna:jna:5.12.1" value="project"/>
+		<level name="Maven: net.java.dev.jna:jna-platform:5.12.1" value="project"/>
+		<level name="Maven: org.slf4j:jcl-over-slf4j:1.7.36" value="project"/>
+		<level name="Maven: com.github.ben-manes.caffeine:caffeine:2.9.3" value="project"/>
+		<level name="Maven: com.google.errorprone:error_prone_annotations:2.10.0" value="project"/>
+		<level name="Maven: org.checkerframework:checker-qual:3.23.0" value="project"/>
+	</levels>
+</component>

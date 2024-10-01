@@ -1,0 +1,58 @@
+
+
+//public class dadostabelas {
+
+    CREATE TABLE professor (
+            codProfessor INT PRIMARY KEY,
+            nome VARCHAR(100) NOT NULL
+);
+
+}
+CREATE TABLE turma (
+        aluno INT,
+        disciplina INT,
+        semestre INT,
+        PRIMARY KEY (aluno, disciplina, semestre),
+FOREIGN KEY (aluno) REFERENCES aluno(codRA),
+FOREIGN KEY (disciplina) REFERENCES disciplina(codDisciplina)
+        );
+
+
+CREATE TABLE curso_aluno (
+        codRA INT,
+        codCurso INT,
+        PRIMARY KEY (codRA, codCurso),
+FOREIGN KEY (codRA) REFERENCES aluno(codRA),
+FOREIGN KEY (codCurso) REFERENCES curso(codCurso)
+        );
+
+
+CREATE TABLE curso_disciplina (
+        codCurso INT,
+        codDisciplina INT,
+        PRIMARY KEY (codCurso, codDisciplina),
+FOREIGN KEY (codCurso) REFERENCES curso(codCurso),
+FOREIGN KEY (codDisciplina) REFERENCES disciplina(codDisciplina)
+        );
+
+
+
+CREATE TABLE disciplina (
+        codDisciplina INT PRIMARY KEY,
+        nome VARCHAR(100) NOT NULL
+);
+
+
+
+CREATE TABLE curso (
+        codCurso INT PRIMARY KEY,
+        nome VARCHAR(100) NOT NULL
+);
+
+
+
+CREATE TABLE aluno (
+        codRA INT PRIMARY KEY,
+        nome VARCHAR(100) NOT NULL,
+data_nascimento DATE NOT NULL
+);
